@@ -9,8 +9,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }} ! ✅</h1>
-
- 
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+    {% if app.user %}
+        <h1>Hello {{ app.user.lastname }} {{ app.user.firstname }} ! ✅</h1>
+    {% else %}
+        <h1>Hello Guest ! ✅</h1>
+    {% endif %}
 </div>
 {% endblock %}

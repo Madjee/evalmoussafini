@@ -10,7 +10,7 @@
             {% include "admin/products/_form.html.twig" with {'button_label': 'Modifier'} %}
         </div>
         {# Ajoutez un bouton de suppression de l'article #}
-        <form action="{{ path('products_delete', {'id': products.id}) }}" method="post"
+        <form action="{{ path('product_delete', {'id': product.id}) }}" method="post"
             onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">
             <button type="submit" class="btn btn-danger">Supprimer</button>
         </form>

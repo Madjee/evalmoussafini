@@ -23,24 +23,24 @@ class ProductsController extends AbstractController
 
         // Redirigez vers une page de confirmation ou une autre page
         // return $this->redirectToRoute('products/details.html.twig');
-        return $this->redirectToRoute('index');
+        return $this->redirectToRoute('index_products');
     }
 
 
 // #[Route('/produits', name: 'products_')]
 // class ProductsController extends AbstractController
 // {
-    #[Route('/', name: 'index')]
+    #[Route('/', name: 'index_products')]
     public function index(): Response
     {
         return $this->render('products/index.html.twig');
     }
 
-    #[Route('/{slug}', name: 'products_details')]
+    
+    #[Route('/titre/{slug}', name: 'products_details')]
     public function details(Products $product): Response
     {
         return $this->render('products/details.html.twig', compact('product'));
     }
-
 
 }
